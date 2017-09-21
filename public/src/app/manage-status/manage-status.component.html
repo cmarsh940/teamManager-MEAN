@@ -1,0 +1,29 @@
+<br>
+<h2>Player Status - Game {{game}}</h2>
+
+<div class="text-center">
+  <button (click) = "changeGame1()" [ngClass]="{'btn btn-info': true}">Game 1</button>
+  <button (click) = "changeGame2()" [ngClass]="{'btn btn-info': true}">Game 2</button>
+  <button (click) = "changeGame3()" [ngClass]="{'btn btn-info': true}">Game 3</button>
+</div>
+<br>
+<div class="container">
+  <table class="table table-bordered table-striped">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Player Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of players">
+        <td>{{player.name}}</td>
+        <td>
+          <button (click)="playing(player)" [class]="(player.games[gameNum]=='playing')+'playing'">Playing</button>
+          <button (click)="notPlaying(player)" [class]="(player.games[gameNum]=='notplaying')+'notplaying'">Not Playing</button>
+          <button (click)="undecided(player)" [class]="(player.games[gameNum]=='undecided')+'undecided'">Undecided</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

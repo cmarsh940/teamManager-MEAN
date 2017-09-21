@@ -1,0 +1,19 @@
+<div class="container">
+    <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of players">
+        <td>{{player.name}}</td>
+        <td>{{player.position}}</td>
+        <td><button (click)="deletePlayer(player)" class="btn btn-danger">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{{ players | json}}
